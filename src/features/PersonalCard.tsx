@@ -1,4 +1,5 @@
 import profile from "../assets/person.png"
+import tester from "../assets/Group 5.png"
 
 const ProfileCard = () => {
   return (
@@ -22,11 +23,14 @@ const ProfileCard = () => {
             <p>Бўйи: <span className="font-medium">175см</span></p>
             <p>Вазни: <span className="font-medium">70кг</span></p>
             <p>Индекс: <span className="font-medium">22,9</span></p>
-            <img
-              src="https://example.com/norma-icon.png"
+           <div className="flex flex-col items-center">
+           <img
+              src={tester}
               alt="Norma Icon"
-              className="w-6 h-6"
+              className="w-6 h-4"
             />
+            <p className="text-xs text-blue-600">Норма</p>
+           </div>
           </div>
         </div>
       </div>
