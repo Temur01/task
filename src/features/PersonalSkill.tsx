@@ -54,10 +54,11 @@ const PersonalSkills = () => {
 
   return (
     <div className="bg-white px-6 container">
-      <h2 className="text-2xl font-bold flex items-center">
-        <span className="w-2 h-6 bg-blue-600 mr-2"></span>
-        Шахсий ва касбий хусусиятлар
-      </h2>
+      <div className=" flex items-center mb-4">
+        <div className="w-2 h-6 bg-blue-light mr-2"></div>
+        <h2 className="text-2xl font-bold text-gray-light">  Шахсий ва касбий хусусиятлар</h2>
+        <div className="flex-1 ml-4 border-t border-2 border-gray-200"></div>
+      </div>
 
       <div className="flex flex-col lg:flex-row lg:justify-between items-center lg:space-x-1">
         <div className="flex-1 space-y-4 lg:mt-0">

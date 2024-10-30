@@ -8,18 +8,16 @@ const App = () => {
   return (
     <div>
       <Header />
-      <div className="mt-10">
+      <div className="mt-6">
         <PersonalCard />
-        <div className="mt-10">
-          <PersonalSkills />
-        </div>
       </div>
-      
-      <div className="mt-10">
+      <div className="mt-6">
+        <PersonalSkills />
+      </div>
+      <div className="mt-6">
         <DiagnosticSection />
       </div>
-     
-       <div className="mt-10">
+      <div className="my-6">
         <CompetenciesSection />
       </div>
     </div>

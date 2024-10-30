@@ -2,11 +2,12 @@
 
 const DiagnosticSection = () => {
   return (
-    <section className="bg-white-slate px-6">
+    <section className="bg-white-slate px-6 py-4">
     <div className="container">
     <div className=" flex items-center mb-4">
         <div className="w-2 h-6 bg-blue-light mr-2"></div>
         <h2 className="text-2xl font-bold text-gray-light">Психологик диагностика</h2>
+        <div className="flex-1 ml-4 border-t border-2 border-gray-200"></div>
       </div>
       <p className="text-gray-text leading-relaxed">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
