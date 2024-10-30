@@ -17,6 +17,7 @@ export default {
     extend: {
       colors: {
         "gray-light": "#212529",
+        "slate-light": "#DEE2E6",
         "gray-text": "#495057",
         "blue-light": "#0956AF",
         "blue-chart": "#0E9CFF",
