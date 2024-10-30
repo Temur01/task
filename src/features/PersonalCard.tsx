@@ -1,11 +1,9 @@
 import profile from "../assets/person.png";
 import tester from "../assets/Group 5.png";
-import brainCircuit from "../assets/fluent_brain-circuit-20-filled.png"
 
 const ProfileCard = () => {
   return (
     <div className="bg-white container grid lg:grid-cols-2 grid-cols-1 gap-4 relative">
-      <img src={brainCircuit} alt="brainCircuit" className="absolute top-0 right-0"/>
       <div className="flex flex-row items-start sm:gap-8 gap-4">
         <div>
           <img
