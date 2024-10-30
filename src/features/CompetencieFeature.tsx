@@ -1,6 +1,12 @@
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { QRCodeSVG } from "qrcode.react";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css"; 
+
+interface Competency {
+  title: string;
+  percentage: number;
+  color: string;
+}
+
 
 const competencies = [
   { title: "Стратегик фикрлаш", percentage: 85, color: "#22c55e" },
@@ -11,45 +17,69 @@ const competencies = [
   { title: "Коммуника­тивлик", percentage: 45, color: "#f97316" },
 ];
 
+const CompetencyChart: React.FC<{ data: Competency }> = ({ data }) => {
+  const chartData = [
+    { name: "Completed", value: data.percentage },
+    { name: "Remaining", value: 100 - data.percentage },
+  ];
+
+  return (
+    <div className="flex flex-col items-center">
+      <ResponsiveContainer width={80} height={80}>
+        <PieChart>
+          <Pie
+            data={chartData}
+            cx="50%"
+            cy="50%"
+            innerRadius={25}
+            outerRadius={35}
+            startAngle={90}
+            endAngle={-270}
+            paddingAngle={2}
+            dataKey="value"
+            isAnimationActive={false}
+          >
+            <Cell key="completed" fill={data.color} />
+            <Cell key="remaining" fill="#d1d5db" />
+          </Pie>
+          <text
+            x="50%"
+            y="50%"
+            textAnchor="middle"
+            dominantBaseline="central"
+            style={{ fontSize: "14px", fontWeight: "bold", fill: "#333" }}
+          >
+            {`${data.percentage}%`}
+          </text>
+        </PieChart>
+      </ResponsiveContainer>
+      <span className="text-gray-800 font-semibold mt-2">{data.title}</span>
+    </div>
+  );
+};
+
 const CompetenciesSection = () => {
   return (
-    <section className="container bg-white px-6">
-      <div className="flex items-center mb-4">
+     <section className="container bg-white px-6 py-4">
+       <div className="flex items-center mb-4">
         <div className="w-2 h-6 bg-blue-600 mr-2"></div>
         <h2 className="text-2xl font-bold text-gray-900">Компетенцияларинг намоён бўлиши</h2>
         <div className="flex-1 ml-4 border-t border-2 border-gray-200"></div>
       </div>
       <div className="flex flex-col gap-5 md:justify-between justify-center md:flex-row items-center mt-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
-          {competencies.map((item, index) => (
-            <div key={index} className="flex items-center space-x-4">
-              <div >
-                <CircularProgressbar
-                     value={item.percentage}
-                      text={`${item.percentage}%`}
-                      styles={{
-                        ...buildStyles({
-                          pathColor: item.color,
-                          textColor: "#333",
-                          trailColor: "#d1d5db",
-                          
-                        }),
-                        root: {
-                          width: '70px', 
-                          height: '70px', 
-                        },
-                      }}
-                />
-              </div>
-              <span className="text-gray-800 font-semibold">{item.title}</span>
-            </div>
-          ))}
-        </div>
-        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32">
-          <QRCodeSVG value="https://argos.uz" width="100%" height="100%" />
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+        {competencies.map((item, index) => (
+          <CompetencyChart key={index} data={item} />
+        ))}
+   
       </div>
-      <p className="text-gray-500 text-center mt-6">Argos.uz 2024</p>
+      <div className="flex justify-center items-center col-span-2 md:col-span-1">
+          <div style={{ width: "100px", height: "100px" }}>
+            <QRCodeSVG value="https://argos.uz" width="100%" height="100%" />
+          </div>
+        </div>
+        </div>
+      <p className="text-gray-500 text-center">Argos.uz 2024</p>
     </section>
   );
 };
