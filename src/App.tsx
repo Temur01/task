@@ -6,7 +6,7 @@ import PersonalSkills from "./features/PersonalSkill";
 
 const App = () => {
   return (
-    <div className="container bg-white p-6">
+    <div className="bg-white p-6">
       <Header />
       <div className="mt-10">
         <PersonalCard />

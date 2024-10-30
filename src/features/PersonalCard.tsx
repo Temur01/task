@@ -4,16 +4,16 @@ import tester from "../assets/Group 5.png";
 const ProfileCard = () => {
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 relative">
-      <div className="flex items-center gap-8">
+      <div className="flex flex-row items-start sm:gap-8 gap-4">
         <div>
           <img
             src={profile}
             alt="Azamat Sharipov"
-            className="w-full sm:w-32 sm:h-36 md:w-44 md:h-48 rounded-md object-cover"
+            className="w-full sm:w-32 sm:h-36 md:w-44 md:h-48 sm:rounded-md object-cover"
           />
         </div>
 
-        <div className="flex-grow space-y-6">
+        <div className="flex flex-grow flex-col sm:space-y-6 space-y-2">
           <div>
             <h1 className="text-xl md:text-2xl font-semibold text-gray-light">
               Азамат Шарипов
@@ -56,7 +56,7 @@ const ProfileCard = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-end justify-between">
+      <div className="flex lg:flex-col flex-row lg:items-end gap-8 justify-between">
         <p className="text-gray-text">
           <span className="text-gray-light">Лавозими:</span>
           <br />
