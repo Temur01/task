@@ -3,7 +3,7 @@ import tester from "../assets/Group 5.png";
 
 const ProfileCard = () => {
   return (
-    <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 relative">
+    <div className="bg-white container grid lg:grid-cols-2 grid-cols-1 gap-4 relative">
       <div className="flex flex-row items-start sm:gap-8 gap-4">
         <div>
           <img

@@ -13,7 +13,7 @@ const competencies = [
 
 const CompetenciesSection = () => {
   return (
-    <section>
+    <section className="container bg-white px-6">
       <div className="flex items-center mb-4">
         <div className="w-2 h-6 bg-blue-600 mr-2"></div>
         <h2 className="text-2xl font-bold text-gray-900">Компетенцияларинг намоён бўлиши</h2>

@@ -53,7 +53,7 @@ const PersonalSkills = () => {
   const secondHalf = progressData.slice(Math.ceil(progressData.length / 2));
 
   return (
-    <div>
+    <div className="bg-white px-6 container">
       <h2 className="text-2xl font-bold flex items-center">
         <span className="w-2 h-6 bg-blue-600 mr-2"></span>
         Шахсий ва касбий хусусиятлар
