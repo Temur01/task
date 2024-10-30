@@ -7,7 +7,6 @@ interface Competency {
   color: string;
 }
 
-
 const competencies = [
   { title: "Стратегик фикрлаш", percentage: 85, color: "#22c55e" },
   { title: "Натижага йўналганлик", percentage: 75, color: "#22c55e" },
@@ -60,26 +59,37 @@ const CompetencyChart: React.FC<{ data: Competency }> = ({ data }) => {
 
 const CompetenciesSection = () => {
   return (
-     <section className="container bg-white px-6 py-4">
-       <div className="flex items-center mb-4">
-        <div className="w-2 h-6 bg-blue-600 mr-2"></div>
-        <h2 className="text-2xl font-bold text-gray-900">Компетенцияларинг намоён бўлиши</h2>
+    <section className="container bg-white px-6 py-4">
+      <div className="flex items-center mb-4">
+        <div className="w-2 h-6 bg-blue-light mr-2"></div>
+        <h2 className="text-2xl font-bold text-gray-light">
+          Компетенцияларинг намоён бўлиши
+        </h2>
         <div className="flex-1 ml-4 border-t border-2 border-gray-200"></div>
       </div>
-      <div className="flex flex-col gap-5 md:justify-between justify-center md:flex-row items-center mt-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
-        {competencies.map((item, index) => (
-          <CompetencyChart key={index} data={item} />
-        ))}
-   
-      </div>
-      <div className="flex justify-center items-center col-span-2 md:col-span-1">
-          <div style={{ width: "100px", height: "100px" }}>
+      <div className="grid grid-cols-4 md:mt-8 mt-4 md:gap-4 gap-8">
+        <div className="md:col-span-3 col-span-4">
+          <div className="grid md:grid-cols-3 grid-cols-2 gap-4 ">
+            {competencies.map((item, index) => (
+              <CompetencyChart key={index} data={item} />
+            ))}
+          </div>
+        </div>
+        <div className="flex justify-center items-center col-span-4 md:col-span-1">
+          <div style={{ width: "150px", height: "150px" }}>
             <QRCodeSVG value="https://argos.uz" width="100%" height="100%" />
           </div>
         </div>
-        </div>
-      <p className="text-gray-500 text-center">Argos.uz 2024</p>
+      </div>
+      <div className="flex justify-center">
+        <a
+          href="https://argos.uz"
+          target="_blank"
+          className="text-gray-500  mt-8"
+        >
+          Argos.uz 2024
+        </a>
+      </div>
     </section>
   );
 };

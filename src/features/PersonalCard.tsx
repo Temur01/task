@@ -4,25 +4,25 @@ import tester from "../assets/Group 5.png";
 const ProfileCard = () => {
   return (
     <div className="bg-white container grid lg:grid-cols-2 grid-cols-1 gap-4 relative">
-      <div className="flex flex-row items-start sm:gap-8 gap-4">
+      <div className="flex flex-row items-start md:gap-10 gap-5">
         <div>
           <img
             src={profile}
             alt="Azamat Sharipov"
-            className="w-full sm:w-32 sm:h-36 md:w-44 md:h-48 sm:rounded-md object-cover"
+            className="w-36 h-44 sm:w-36 sm:h-48 md:w-52 md:h-60 rounded-md object-cover"
           />
         </div>
 
-        <div className="flex flex-grow flex-col sm:space-y-6 space-y-2">
+        <div className="flex flex-grow flex-col md:space-y-8 space-y-6">
           <div>
-            <h1 className="text-xl md:text-2xl font-semibold text-gray-light">
+            <h1 className="text-xl md:text-3xl font-semibold text-gray-light">
               Азамат Шарипов
             </h1>
             <h3 className="text-xl md:text-2xl text-gray-light font-light">
               Абдуллажон угли
             </h3>
           </div>
-          <div className="text-sm md:text-base space-y-4">
+          <div className="text-sm md:text-base md:space-y-4 space-y-6">
             <div>
               <p className="text-gray-text">
                 Туғилган сана:{" "}
@@ -56,7 +56,7 @@ const ProfileCard = () => {
         </div>
       </div>
 
-      <div className="flex lg:flex-col flex-row lg:items-end gap-4 ">
+      <div className="flex lg:flex-col flex-row lg:items-end gap-6">
         <p className="text-gray-text">
           <span className="text-gray-light">Лавозими:</span>
           <br />

@@ -1,4 +1,5 @@
 import React from "react";
+import BellCurveChart from "../widgets/BellCurveChart";
 import { Doughnut, Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -139,8 +140,8 @@ const KnowledgeFeature = () => {
           <h2 className="text-2xl font-bold text-gray-light">Билим тести</h2>
           <div className="flex-1 ml-4 border-t border-gray-200"></div>
         </div>
-        <div className="grid grid-cols-8 gap-4 md:gap-6">
-          <div className="col-span-4">
+        <div className="grid grid-cols-8 gap-5 md:gap-10">
+          <div className="sm:col-span-4 col-span-8">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
               {competencies.map((comp, index) => (
                 <HalfCircleChart
@@ -153,7 +154,7 @@ const KnowledgeFeature = () => {
             </div>
           </div>
 
-          <div className="col-span-2 flex flex-col items-start  justify-between">
+          <div className="md:col-span-2 sm:col-span-4 col-span-8 flex flex-col items-center sm:items-start md:gap-12 sm:gap-8 gap-4">
             <div className="w-full max-w-sm">
               <Line data={lineData} options={lineOptions} />
             </div>
@@ -173,9 +174,9 @@ const KnowledgeFeature = () => {
             </div>
           </div>
 
-          {/* <div className="col-span-2">
+          <div className="md:col-span-2 sm:col-span-4 col-span-8">
             <BellCurveChart />
-          </div> */}
+          </div>
 
         </div>
       </div>
