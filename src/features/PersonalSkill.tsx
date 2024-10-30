@@ -15,7 +15,7 @@ const PersonalSkills = () => {
     datasets: [
       {
         label: "Skills",
-        data: [60, 70, 85, 90, 75],
+        data: [80, 70, 85, 90, 75],
         backgroundColor: "rgba(54, 162, 235, 0.2)",
         borderColor: "rgba(54, 162, 235, 1)",
         borderWidth: 1,
@@ -24,6 +24,8 @@ const PersonalSkills = () => {
   };
 
   const radarOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       r: {
         angleLines: { display: false },
@@ -58,36 +60,44 @@ const PersonalSkills = () => {
       </h2>
 
       <div className="flex flex-col lg:flex-row lg:justify-between items-center lg:space-x-1">
-        <div className="flex-1 space-y-4">
+        <div className="flex-1 space-y-4 lg:mt-0">
           {firstHalf.map((item, index) => (
-            <div key={index} className="flex items-center space-x-2">
-              <p className="text-gray-800 w-1/2">{item.label}</p>
+            <div key={index} className="my-4">
+              <div className="flex justify-between mb-1">
+                <p className="text-gray-light">{item.label}</p>
+                <p className="text-gray-light font-semibold">{item.value}%</p>
+              </div>
+
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
-                  className="bg-blue-600 h-2 rounded-full"
+                  className="bg-blue-light h-2 rounded-full"
                   style={{ width: `${item.value}%` }}
                 ></div>
               </div>
-              <p className="text-gray-800 font-semibold">{item.value}%</p>
             </div>
           ))}
         </div>
 
         <div className="flex-1 mt-4 lg:mt-0 flex justify-center">
-          <Radar data={radarData} options={radarOptions} className="w-full max-w-md" />
+          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-square">
+            <Radar data={radarData} options={radarOptions} />
+          </div>
         </div>
 
         <div className="flex-1 space-y-4 lg:mt-0">
           {secondHalf.map((item, index) => (
-            <div key={index} className="flex items-center space-x-2">
-              <p className="text-gray-800 w-1/2">{item.label}</p>
+            <div key={index} className="my-4">
+              <div className="flex justify-between mb-1">
+                <p className="text-gray-light">{item.label}</p>
+                <p className="text-gray-light font-semibold">{item.value}%</p>
+              </div>
+
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
-                  className="bg-blue-600 h-2 rounded-full"
+                  className="bg-blue-light h-2 rounded-full"
                   style={{ width: `${item.value}%` }}
                 ></div>
               </div>
-              <p className="text-gray-800 font-semibold">{item.value}%</p>
             </div>
           ))}
         </div>

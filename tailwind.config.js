@@ -5,16 +5,24 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "1rem", 
+      padding: "1rem",
       screens: {
-        sm: "100%", 
+        sm: "100%",
         md: "768px",
         lg: "1024px",
         xl: "1280px",
         "2xl": "1440px",
       },
     },
-    extend: {},
+    extend: {
+      colors: {
+        "gray-light": "#212529",
+        "gray-text": "#495057",
+        "blue-light": "#0956AF",
+        "blue-chart": "#0E9CFF",
+        "green-light": "#28A264",
+      },
+    },
   },
   plugins: [],
 };

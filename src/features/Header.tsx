@@ -10,12 +10,12 @@ const Header = () => {
   //   };
 
   return (
-    <header className="flex items-center justify-between text-gray-900">
-      <div className="w-24 h-24 flex items-center justify-center">
+    <header className="flex items-center justify-between text-gray-light">
+      <div className="w-28 h-24 flex items-center justify-center">
         <img src={logo} alt="logo" />
       </div>
 
-      <h1 className="text-lg md:text-xl font-bold text-center">
+      <h1 className="text-xl md:text-2xl font-semibold text-center">
         Республика Ассессмент маркази <br />
         онлайн платформаси
       </h1>
@@ -32,9 +32,9 @@ const Header = () => {
             <MoonIcon className="w-6 h-6 text-gray-800" />
           )}
         </button> */}
-        <div className="flex items-center space-x-1">
-          <span className="text-3xl font-bold text-blue-600">78</span>
-          <span className="text-green-600 text-lg">▲2</span>
+        <div className="flex items-center relative">
+          <span className="text-3xl font-bold text-blue-light">78</span>
+          <span className="font-semibold text-green-light text-lg absolute -top-2 -right-7 flex items-center gap-0.5"><span className="text-[8px]">▲</span>2</span>
         </div>
       </div>
     </header>

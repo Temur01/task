@@ -1,50 +1,78 @@
-import profile from "../assets/person.png"
-import tester from "../assets/Group 5.png"
+import profile from "../assets/person.png";
+import tester from "../assets/Group 5.png";
 
 const ProfileCard = () => {
   return (
-    <div className=" flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8">
-     
-      <div className="flex-shrink-0 flex justify-center md:justify-start">
+    <div className="grid grid-cols-2 gap-4 relative">
+
+     <div className="flex items-center gap-8">
+     <div>
         <img
           src={profile}
           alt="Azamat Sharipov"
-          className="w-32 h-32 md:w-40 md:h-40 rounded-md object-cover"
+          className="w-full sm:w-32 sm:h-36 md:w-44 md:h-48 rounded-md object-cover"
         />
       </div>
 
-      <div className="flex-grow space-y-4">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900">Азамат Шарипов</h2>
-        <h3 className="text-lg md:text-xl text-gray-600">Абдуллажон угли</h3>
-        <div className="text-gray-700 text-sm md:text-base space-y-1">
-          <p>Туғилган сана: <span className="font-medium">30.09.1997 йил</span></p>
-          <p>Туғилган жой: <span className="font-medium">Чуст ш., Наманган.</span></p>
-          <div className="flex items-center space-x-4">
-            <p>Бўйи: <span className="font-medium">175см</span></p>
-            <p>Вазни: <span className="font-medium">70кг</span></p>
-            <p>Индекс: <span className="font-medium">22,9</span></p>
-           <div className="flex flex-col items-center">
-           <img
-              src={tester}
-              alt="Norma Icon"
-              className="w-6 h-4"
-            />
-            <p className="text-xs text-blue-600">Норма</p>
-           </div>
+      <div className="flex-grow space-y-6">
+        <div>
+          <h1 className="text-xl md:text-2xl font-semibold text-gray-light">
+            Азамат Шарипов
+          </h1>
+          <h3 className="text-xl md:text-2xl text-gray-light font-light">
+            Абдуллажон угли
+          </h3>
+        </div>
+        <div className="text-sm md:text-base space-y-4">
+          <div>
+            <p className="text-gray-text">
+              Туғилган сана:{" "}
+              <span className="font-medium text-gray-light">
+                30.09.1997 йил
+              </span>
+            </p>
+            <p className="text-gray-text">
+              Туғилган жой:{" "}
+              <span className="font-medium text-gray-light">
+                Чуст ш., Наманган.
+              </span>
+            </p>
+          </div>
+          <div className="flex items-center space-x-6">
+            <div className="flex flex-col">
+              Бўйи: <span className="font-medium">175см</span>
+            </div>
+            <div className="flex flex-col">
+              Вазни: <span className="font-medium">70кг</span>
+            </div>
+            <div className="flex flex-col">
+              Индекс: <span className="font-medium">22,9</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <img src={tester} alt="Norma Icon" className="w-10 h-6" />
+              <p className="text-sm text-blue-light">Норма</p>
+            </div>
           </div>
         </div>
       </div>
+     </div>
 
-      <div className="flex-shrink-0 space-y-2 text-gray-700 text-sm md:text-base">
-        <p>
-          <span className="font-semibold">Лавозими:</span><br />
-          Қорақалпоғистон Республикаси Камбагалликни қисқартириш ва бандлик вазири ўринбосари
+      <div className="flex flex-col items-end justify-between">
+        <p className="text-gray-text">
+          <span className="text-gray-light">Лавозими:</span>
+          <br />
+          Қорақалпоғистон Республикаси Камбагалликни қисқартириш <br /> ва{" "}
+          бандлик вазири ўринбосари
         </p>
-        <p>
-          <span className="font-semibold">Номзод:</span><br />
-          Қорақалпоғистон Республикаси Камбагалликни қисқартириш ва бандлик вазири
+        <p className="text-gray-text">
+          <span className="text-gray-light">Номзод:</span>
+          <br />
+          Қорақалпоғистон Республикаси Камбагалликни қисқартириш <br /> ва
+          бандлик вазири
         </p>
       </div>
+
+    
     </div>
   );
 };
