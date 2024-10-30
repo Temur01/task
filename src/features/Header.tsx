@@ -10,12 +10,12 @@ const Header = () => {
   //   };
 
   return (
-    <header className="container bg-white px-6 py-3 flex items-center justify-between text-gray-light">
-      <div className="w-28 h-24 flex items-center justify-center">
+    <header className="container bg-white px-6 py-3 flex items-center justify-between text-gray-light gap-2">
+      <div className="w-32 h-24 flex items-center justify-center">
         <img src={logo} alt="logo" />
       </div>
 
-      <h1 className="text-xl md:text-2xl font-semibold text-center">
+      <h1 className=" md:text-2xl text-base font-semibold text-center">
         Республика Ассессмент маркази <br />
         онлайн платформаси
       </h1>

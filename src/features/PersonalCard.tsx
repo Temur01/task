@@ -56,7 +56,7 @@ const ProfileCard = () => {
         </div>
       </div>
 
-      <div className="flex lg:flex-col flex-row lg:items-end gap-8 justify-between">
+      <div className="flex lg:flex-col flex-row lg:items-end gap-4 ">
         <p className="text-gray-text">
           <span className="text-gray-light">Лавозими:</span>
           <br />
