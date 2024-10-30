@@ -19,7 +19,7 @@ const App = () => {
         <DiagnosticSection />
       </div>
       */}
-       <div className="mt-6">
+       <div className="mt-10">
         <CompetenciesSection />
       </div>
     </div>

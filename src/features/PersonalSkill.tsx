@@ -11,7 +11,7 @@ ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler);
 
 const PersonalSkills = () => {
   const radarData = {
-    labels: ["Photoshop", "Premiere", "InDesign", "Illustrator", "XD"],
+    labels: ["Photoshop", "Illustrator", "XD", "Premiere", "InDesign"],
     datasets: [
       {
         label: "Skills",
@@ -68,7 +68,7 @@ const PersonalSkills = () => {
                 <p className="text-gray-light font-semibold">{item.value}%</p>
               </div>
 
-              <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="w-full bg-slate-light rounded-full h-2">
                 <div
                   className="bg-blue-light h-2 rounded-full"
                   style={{ width: `${item.value}%` }}
@@ -79,7 +79,7 @@ const PersonalSkills = () => {
         </div>
 
         <div className="flex-1 mt-4 lg:mt-0 flex justify-center">
-          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-square">
+          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
             <Radar data={radarData} options={radarOptions} />
           </div>
         </div>
