@@ -92,7 +92,7 @@ const HalfCircleChart: React.FC<HalfCircleChartProps> = ({
           {percentage}%
         </div>
       </div>
-      <p className="text-center text-gray-700 text-sm">{label}</p>
+      <p className="text-center text-gray-text text-sm">{label}</p>
     </div>
   );
 };
@@ -105,10 +105,10 @@ const KnowledgeFeature = () => {
         label: "Performance",
         data: [20, 50, 80, 60, 30, 75, 65],
         fill: false,
-        borderColor: "#2563eb",
-        backgroundColor: "#2563eb",
-        pointBorderColor: "#2563eb",
-        pointBackgroundColor: "#2563eb",
+        borderColor: "#0E9CFF",
+        backgroundColor: "#0E9CFF",
+        pointBorderColor: "#0E9CFF",
+        pointBackgroundColor: "#0E9CFF",
         tension: 0.3,
       },
     ],
@@ -139,9 +139,9 @@ const KnowledgeFeature = () => {
           <h2 className="text-2xl font-bold text-gray-light">Билим тести</h2>
           <div className="flex-1 ml-4 border-t border-gray-200"></div>
         </div>
-        <div className="grid grid-cols-8 gap-4">
+        <div className="grid grid-cols-8 gap-4 md:gap-6">
           <div className="col-span-4">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
               {competencies.map((comp, index) => (
                 <HalfCircleChart
                   key={index}
@@ -153,19 +153,30 @@ const KnowledgeFeature = () => {
             </div>
           </div>
 
-          <div className="col-span-4 flex flex-col items-center space-y-6">
+          <div className="col-span-2 flex flex-col items-start  justify-between">
             <div className="w-full max-w-sm">
               <Line data={lineData} options={lineOptions} />
             </div>
 
-            <div className="flex items-center space-x-4">
-              <h3 className="text-3xl font-bold text-blue-light">78%</h3>
-              <div className="flex items-center bg-green-light text-white px-4 py-2 rounded-lg font-semibold">
-                Умумий натижа
+            <div className="flex flex-col">
+              <h3 className="text-2xl font-semibold text-blue-light ms-2">
+                78%
+              </h3>
+
+              <div className="flex">
+                <div className="flex items-center bg-green-light text-white px-4 rounded-l-lg font-semibold">
+                  Умумий натижа
+                </div>
+
+                <div className="bg-gray-200 h-8 w-8 rounded-r-lg"></div>
               </div>
-              <div className="bg-gray-200 h-8 w-12 rounded-r-lg"></div>
             </div>
           </div>
+
+          {/* <div className="col-span-2">
+            <BellCurveChart />
+          </div> */}
+
         </div>
       </div>
     </section>

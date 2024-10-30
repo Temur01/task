@@ -61,7 +61,7 @@ const PersonalSkills = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row lg:justify-between items-center lg:space-x-1">
-        <div className="flex-1 space-y-4 lg:mt-0">
+        <div className="flex-1 space-y-4 w-full lg:mt-0">
           {firstHalf.map((item, index) => (
             <div key={index} className="my-4">
               <div className="flex justify-between mb-1">
@@ -80,12 +80,12 @@ const PersonalSkills = () => {
         </div>
 
         <div className="flex-1 mt-4 lg:mt-0 flex justify-center">
-          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-            <Radar data={radarData} options={radarOptions} />
+          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg" style={{ width: '400px', height: '300px' }}>
+            <Radar data={radarData} options={radarOptions}  />
           </div>
         </div>
 
-        <div className="flex-1 space-y-4 lg:mt-0">
+        <div className="flex-1 space-y-4 lg:mt-0 w-full">
           {secondHalf.map((item, index) => (
             <div key={index} className="my-4">
               <div className="flex justify-between mb-1">
