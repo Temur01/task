@@ -22,6 +22,7 @@ export default {
         "blue-light": "#0956AF",
         "blue-chart": "#0E9CFF",
         "green-light": "#28A264",
+        "white-slate":"#F5F5F5"
       },
     },
   },

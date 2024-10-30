@@ -1,25 +1,23 @@
 import CompetenciesSection from "./features/CompetencieFeature";
-// import DiagnosticSection from "./features/DiagnosticFeature";
+import DiagnosticSection from "./features/DiagnosticFeature";
 import Header from "./features/Header";
 import PersonalCard from "./features/PersonalCard";
 import PersonalSkills from "./features/PersonalSkill";
 
 const App = () => {
   return (
-    <div className="bg-white p-6">
+    <div>
       <Header />
-      <div className="mt-10">
+      <div className="mt-6">
         <PersonalCard />
-        <div className="mt-10">
-          <PersonalSkills />
-        </div>
       </div>
-      {/* 
+      <div className="mt-6">
+        <PersonalSkills />
+      </div>
       <div className="mt-6">
         <DiagnosticSection />
       </div>
-      */}
-       <div className="mt-10">
+      <div className="my-6">
         <CompetenciesSection />
       </div>
     </div>

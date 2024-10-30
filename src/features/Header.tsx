@@ -10,7 +10,7 @@ const Header = () => {
   //   };
 
   return (
-    <header className="flex items-center justify-between text-gray-light">
+    <header className="container bg-white px-6 py-3 flex items-center justify-between text-gray-light">
       <div className="w-28 h-24 flex items-center justify-center">
         <img src={logo} alt="logo" />
       </div>
