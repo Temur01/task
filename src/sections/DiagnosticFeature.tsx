@@ -1,11 +1,24 @@
 import TopOfSection from "../components/TopOfSection";
+import useTheme from "../hooks/useTheme";
 
 const DiagnosticSection = () => {
+  const { theme } = useTheme();
+
   return (
-    <section className="bg-white-slate p-6">
-      <div className="container">
+    <section
+      className={`${
+        theme === "dark"
+          ? "bg-dark-gray-light text-dark-white-slate"
+          : "bg-white-slate text-gray-text"
+      }`}
+    >
+      <div className="container p-6">
         <TopOfSection title="Психологик диагностика" />
-        <p className="text-gray-text leading-relaxed">
+        <p
+          className={`leading-relaxed ${
+            theme === "dark" ? "text-dark-gray-text" : "text-gray-text"
+          }`}
+        >
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and

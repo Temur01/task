@@ -1,4 +1,3 @@
-import BellCurveChart from "../components/charts/BellCurveChart";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -14,6 +13,8 @@ import {
 import TopOfSection from "../components/TopOfSection";
 import { competenciesKnowledge } from "../data/data";
 import HalfCircleChart from "../components/charts/HalfCircleChart";
+import useTheme from "../hooks/useTheme";
+import BellCurveChart from "../components/charts/BellCurveChart";
 
 ChartJS.register(
   ArcElement,
@@ -27,6 +28,8 @@ ChartJS.register(
 );
 
 const KnowledgeFeature = () => {
+  const { theme } = useTheme();
+
   const lineData = {
     labels: ["12.06", "18.06", "03.07", "13.07", "14.07", "20.07", "24.07"],
     datasets: [
@@ -34,10 +37,10 @@ const KnowledgeFeature = () => {
         label: "Performance",
         data: [20, 50, 80, 60, 30, 75, 65],
         fill: false,
-        borderColor: "#0E9CFF",
-        backgroundColor: "#0E9CFF",
-        pointBorderColor: "#0E9CFF",
-        pointBackgroundColor: "#0E9CFF",
+        borderColor: theme === "dark" ? "#74c0fc" : "#0E9CFF", // Light blue in dark mode
+        backgroundColor: theme === "dark" ? "#74c0fc" : "#0E9CFF",
+        pointBorderColor: theme === "dark" ? "#74c0fc" : "#0E9CFF",
+        pointBackgroundColor: theme === "dark" ? "#74c0fc" : "#0E9CFF",
         tension: 0.3,
       },
     ],
@@ -55,14 +58,26 @@ const KnowledgeFeature = () => {
         max: 100,
         ticks: {
           stepSize: 25,
+          color: theme === "dark" ? "#e9ecef" : "#495057",
+        },
+      },
+      x: {
+        ticks: {
+          color: theme === "dark" ? "#e9ecef" : "#495057",
         },
       },
     },
   };
 
   return (
-    <section className="bg-white-slate p-6">
-      <div className="container">
+    <section
+      className={`${
+        theme === "dark"
+          ? "bg-dark-gray-light text-dark-white-slate"
+          : "bg-white-slate text-gray-light"
+      }`}
+    >
+      <div className="container p-6">
         <TopOfSection title="Билим тести" />
         <div className="grid grid-cols-8 gap-5 md:gap-10">
           <div className="sm:col-span-4 col-span-8">
@@ -87,13 +102,20 @@ const KnowledgeFeature = () => {
               <h3 className="text-2xl font-semibold text-blue-light ms-2">
                 78%
               </h3>
-
               <div className="flex">
-                <div className="flex items-center bg-green-light text-white px-4 rounded-l-lg font-semibold">
+                <div
+                  className={`flex items-center px-4 rounded-l-lg font-semibold bg-green-light ${
+                    theme === "dark"
+                      ? " text-gray-light"
+                      : " text-white"
+                  }`}
+                >
                   Умумий натижа
                 </div>
 
-                <div className="bg-gray-200 h-8 w-8 rounded-r-lg"></div>
+                <div
+                  className={`h-8 w-8 rounded-r-lg bg-gray-200`}
+                ></div>
               </div>
             </div>
           </div>

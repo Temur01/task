@@ -1,4 +1,5 @@
 import { Doughnut } from "react-chartjs-2";
+import useTheme from "../../hooks/useTheme";
 
 type HalfCircleChartProps = {
   percentage: number;
@@ -11,6 +12,7 @@ const HalfCircleChart = ({
   color,
   label,
 }: HalfCircleChartProps) => {
+  const {theme } = useTheme();
   const data = {
     datasets: [
       {
@@ -40,7 +42,7 @@ const HalfCircleChart = ({
           {percentage}%
         </div>
       </div>
-      <p className="text-center text-gray-text text-sm">{label}</p>
+      <p className={`text-center  text-sm ${theme==='dark'?"text-dark-gray-text":"text-gray-text"}`}>{label}</p>
     </div>
   );
 };

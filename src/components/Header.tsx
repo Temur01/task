@@ -18,7 +18,7 @@ const Header = () => {
       </div>
 
       <h1
-        className={`md:text-2xl text-base font-semibold text-center ${
+        className={`md:text-2xl text-base font-semibold text-center sm:block hidden  ${
           theme === "dark" ? "text-dark-gray-text" : "text-gray-light"
         }`}
       >

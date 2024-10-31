@@ -2,10 +2,19 @@ import { QRCodeSVG } from "qrcode.react";
 import { competencies } from "../data/data";
 import TopOfSection from "../components/TopOfSection";
 import CompetencyChart from "../components/charts/CompetencyChart";
+import useTheme from "../hooks/useTheme";
 
 const CompetenciesSection = () => {
+  const { theme } = useTheme();
+
   return (
-    <section className="container bg-white px-6 py-4">
+    <section
+      className={`container px-6 py-4 ${
+        theme === "dark"
+          ? "bg-dark-gray-light text-dark-white-slate"
+          : "bg-white text-gray-text"
+      }`}
+    >
       <TopOfSection title="Компетенцияларинг намоён бўлиши" />
       <div className="grid grid-cols-4 md:mt-8 mt-4 md:gap-4 gap-8">
         <div className="md:col-span-3 col-span-4">
@@ -25,7 +34,10 @@ const CompetenciesSection = () => {
         <a
           href="https://argos.uz"
           target="_blank"
-          className="text-gray-text mt-8"
+          rel="noopener noreferrer" 
+          className={`mt-8 ${
+            theme === "dark" ? "text-dark-gray-text" : "text-gray-text"
+          }`}
         >
           Argos.uz 2024
         </a>
