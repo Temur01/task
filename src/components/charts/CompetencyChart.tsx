@@ -14,6 +14,8 @@ const CompetencyChart: React.FC<{ data: Competency }> = ({ data }) => {
     { name: "Remaining", value: 100 - data.percentage },
   ];
 
+  const textColor = theme === 'dark' ? '#f8fafc' : '#333';  
+
   return (
     <div className="flex flex-col md:items-start items-center">
       <ResponsiveContainer width={100} height={100}>
@@ -38,7 +40,7 @@ const CompetencyChart: React.FC<{ data: Competency }> = ({ data }) => {
             y="50%"
             textAnchor="middle"
             dominantBaseline="central"
-            style={{ fontSize: "14px", fontWeight: "bold", fill: "#333" }}
+            style={{ fontSize: "14px", fontWeight: "bold", fill: textColor }}
           >
             {`${data.percentage}%`}
           </text>

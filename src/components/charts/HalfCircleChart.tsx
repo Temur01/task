@@ -12,7 +12,7 @@ const HalfCircleChart = ({
   color,
   label,
 }: HalfCircleChartProps) => {
-  const {theme } = useTheme();
+  const { theme } = useTheme();
   const data = {
     datasets: [
       {
@@ -38,11 +38,21 @@ const HalfCircleChart = ({
     <div className="flex flex-col items-center">
       <div style={{ width: 100, height: 100 }} className="relative">
         <Doughnut data={data} options={options} />
-        <div className="absolute inset-0 top-8 flex items-center justify-center text-base font-semibold">
+        <div
+          className={`absolute inset-0 top-8 flex items-center justify-center text-base font-semibold ${
+            theme === "dark" ? "text-dark-gray-text" : ""
+          }`}
+        >
           {percentage}%
         </div>
       </div>
-      <p className={`text-center  text-sm ${theme==='dark'?"text-dark-gray-text":"text-gray-text"}`}>{label}</p>
+      <p
+        className={`text-center  text-sm ${
+          theme === "dark" ? "text-dark-gray-text" : "text-gray-text"
+        }`}
+      >
+        {label}
+      </p>
     </div>
   );
 };
