@@ -24,7 +24,7 @@ const App = () => {
       <div className="mt-8">
         <DiagnosticSection />
       </div>
-      <div className="my-8">
+      <div className="mt-8">
         <CompetenciesSection />
       </div>
     </div>
