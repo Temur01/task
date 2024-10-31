@@ -1,4 +1,5 @@
 import { Radar } from "react-chartjs-2";
+import { progressData } from "../data/data";
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -6,6 +7,7 @@ import {
   LineElement,
   Filler,
 } from "chart.js";
+import TopOfSection from "../shared/TopOfSection";
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler);
 
@@ -38,28 +40,12 @@ const PersonalSkills = () => {
     },
   };
 
-  const progressData = [
-    { label: "Мақсадга интилушчанлик", value: 90 },
-    { label: "Эмоционал интеллект", value: 95 },
-    { label: "Креативлик", value: 75 },
-    { label: "Ходимларга йўналганлик", value: 86 },
-    { label: "Топширикларга йўналганлик", value: 95 },
-    { label: "Фаол ижтимоий муносабатлар", value: 75 },
-    { label: "Ўз устида ишлаш", value: 86 },
-    { label: "Муаммоли вазиятга йўналганлик", value: 86 },
-  ];
-
   const firstHalf = progressData.slice(0, Math.ceil(progressData.length / 2));
   const secondHalf = progressData.slice(Math.ceil(progressData.length / 2));
 
   return (
     <div className="bg-white px-6 container">
-      <div className=" flex items-center mb-4">
-        <div className="w-2 h-6 bg-blue-light mr-2"></div>
-        <h2 className="text-2xl font-bold text-gray-light">  Шахсий ва касбий хусусиятлар</h2>
-        <div className="flex-1 ml-4 border-t border-2 border-gray-200"></div>
-      </div>
-
+      <TopOfSection title="Шахсий ва касбий хусусиятлар" />
       <div className="flex flex-col lg:flex-row lg:justify-between items-center lg:space-x-1">
         <div className="flex-1 space-y-4 w-full lg:mt-0">
           {firstHalf.map((item, index) => (
@@ -80,8 +66,11 @@ const PersonalSkills = () => {
         </div>
 
         <div className="flex-1 mt-4 lg:mt-0 flex justify-center">
-          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg" style={{ width: '400px', height: '300px' }}>
-            <Radar data={radarData} options={radarOptions}  />
+          <div
+            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
+            style={{ width: "400px", height: "300px" }}
+          >
+            <Radar data={radarData} options={radarOptions} />
           </div>
         </div>
 

@@ -91,7 +91,7 @@ const BellCurveChart = () => {
   };
 
   return (
-    <div className="flex flex-col items-center ">
+    <div className="flex flex-col items-center">
       <div className="flex items-center mb-4">
         <img src={brain} alt="brain" className="w-9 h-9 me-2" />
         <p className="text-gray-text">

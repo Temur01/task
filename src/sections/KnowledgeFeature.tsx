@@ -1,6 +1,5 @@
-import React from "react";
-import BellCurveChart from "../widgets/BellCurveChart";
-import { Doughnut, Line } from "react-chartjs-2";
+import BellCurveChart from "../components/charts/BellCurveChart";
+import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   ArcElement,
@@ -12,6 +11,9 @@ import {
   LineElement,
   Title,
 } from "chart.js";
+import TopOfSection from "../shared/TopOfSection";
+import { competenciesKnowledge } from "../data/data";
+import HalfCircleChart from "../components/charts/HalfCircleChart";
 
 ChartJS.register(
   ArcElement,
@@ -23,80 +25,6 @@ ChartJS.register(
   LineElement,
   Title
 );
-
-const competencies = [
-  {
-    label: "Конституциявий–ҳуқуқий саводхонлик",
-    percentage: 33,
-    color: "#ef4444",
-  },
-  {
-    label: "Ахборот-коммуникация технологиялари",
-    percentage: 79,
-    color: "#22c55e",
-  },
-  {
-    label: "Турли соҳадаги ислоҳотлардан хабардорлик",
-    percentage: 78,
-    color: "#22c55e",
-  },
-  { label: "Ўзбек тили ва адабиёти", percentage: 48, color: "#f59e0b" },
-  {
-    label: "Ўзбекистон тарихи ва маданияти",
-    percentage: 100,
-    color: "#2563eb",
-  },
-  {
-    label: "Ақлий салоҳияти ва мантиқий фикрлаш",
-    percentage: 55,
-    color: "#f59e0b",
-  },
-];
-
-interface HalfCircleChartProps {
-  percentage: number;
-  color: string;
-  label: string;
-}
-
-const HalfCircleChart: React.FC<HalfCircleChartProps> = ({
-  percentage,
-  color,
-  label,
-}) => {
-  const data = {
-    datasets: [
-      {
-        data: [percentage, 100 - percentage],
-        backgroundColor: [color, "#e5e7eb"],
-        hoverBackgroundColor: [color, "#e5e7eb"],
-        borderWidth: 0,
-      },
-    ],
-  };
-
-  const options = {
-    rotation: -90,
-    circumference: 180,
-    cutout: "70%",
-    plugins: {
-      legend: { display: false },
-      tooltip: { enabled: false },
-    },
-  };
-
-  return (
-    <div className="flex flex-col items-center">
-      <div style={{ width: 100, height: 100 }} className="relative">
-        <Doughnut data={data} options={options} />
-        <div className="absolute inset-0 top-8 flex items-center justify-center text-base font-semibold">
-          {percentage}%
-        </div>
-      </div>
-      <p className="text-center text-gray-text text-sm">{label}</p>
-    </div>
-  );
-};
 
 const KnowledgeFeature = () => {
   const lineData = {
@@ -135,15 +63,11 @@ const KnowledgeFeature = () => {
   return (
     <section className="bg-white-slate p-6">
       <div className="container">
-        <div className="flex items-center mb-4">
-          <div className="w-2 h-6 bg-blue-light mr-2"></div>
-          <h2 className="text-2xl font-bold text-gray-light">Билим тести</h2>
-          <div className="flex-1 ml-4 border-t border-gray-200"></div>
-        </div>
+        <TopOfSection title="Билим тести" />
         <div className="grid grid-cols-8 gap-5 md:gap-10">
           <div className="sm:col-span-4 col-span-8">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-              {competencies.map((comp, index) => (
+              {competenciesKnowledge.map((comp, index) => (
                 <HalfCircleChart
                   key={index}
                   percentage={comp.percentage}
@@ -177,7 +101,6 @@ const KnowledgeFeature = () => {
           <div className="md:col-span-2 sm:col-span-4 col-span-8">
             <BellCurveChart />
           </div>
-
         </div>
       </div>
     </section>
