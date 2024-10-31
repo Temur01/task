@@ -13,7 +13,7 @@ const Header = () => {
           : "bg-white text-gray-light"
       }`}
     >
-      <div className="w-32 h-24 flex items-center justify-center">
+      <div className="sm:w-32 sm:h-24 w-24 h-16 flex items-center justify-center">
         <img src={logo} alt="logo" />
       </div>
 

@@ -18,7 +18,7 @@ const ProfileCard = () => {
           <img
             src={profile}
             alt="Azamat Sharipov"
-            className="w-36 h-44 sm:w-36 sm:h-48 md:w-52 md:h-60 rounded-md object-cover"
+            className="w-40 h-44 sm:w-36 sm:h-48 md:w-52 md:h-56 rounded-md object-cover"
           />
         </div>
 
@@ -39,7 +39,7 @@ const ProfileCard = () => {
               Абдуллажон угли
             </h3>
           </div>
-          <div className="text-sm md:text-base md:space-y-4 space-y-6">
+          <div className="text-sm md:text-base md:space-y-5 space-y-6">
             <div>
               <p
                 className={`${
@@ -58,7 +58,7 @@ const ProfileCard = () => {
                 <span className="font-medium">Чуст ш., Наманган.</span>
               </p>
             </div>
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center sm:space-x-6 space-x-4">
               <div className={`flex flex-col ${theme === 'dark' ? "text-dark-gray-text" :"text-gray-light"}`}>
                 Бўйи: <span className="font-medium">175см</span>
               </div>
