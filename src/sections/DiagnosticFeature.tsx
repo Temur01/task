@@ -1,4 +1,4 @@
-import TopOfSection from "../shared/TopOfSection";
+import TopOfSection from "../components/TopOfSection";
 
 const DiagnosticSection = () => {
   return (

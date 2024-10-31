@@ -22,9 +22,18 @@ export default {
         "blue-light": "#0956AF",
         "blue-chart": "#0E9CFF",
         "green-light": "#28A264",
-        "white-slate":"#F5F5F5"
+        "white-slate": "#F5F5F5",
+        // Dark mode colors
+        "dark-gray-light": "#343a40",
+        "dark-slate-light": "#adb5bd",
+        "dark-gray-text": "#e9ecef",
+        "dark-blue-light": "#0d6efd",
+        "dark-blue-chart": "#74c0fc",
+        "dark-green-light": "#20c997",
+        "dark-white-slate": "#212529",
       },
     },
+    
   },
   plugins: [],
 };

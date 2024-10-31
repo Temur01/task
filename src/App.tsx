@@ -1,13 +1,16 @@
-import CompetenciesSection from "./sections/CompetencieFeature";
-import DiagnosticSection from "./sections/DiagnosticFeature";
-import Header from "./components/Header";
-import KnowledgeFeature from "./sections/KnowledgeFeature";
-import PersonalCard from "./sections/PersonalCard";
-import PersonalSkills from "./sections/PersonalSkill";
+import useTheme from './hooks/useTheme';
+import Header from './components/Header';
+import CompetenciesSection from './sections/CompetencieFeature';
+import DiagnosticSection from './sections/DiagnosticFeature';
+import KnowledgeFeature from './sections/KnowledgeFeature';
+import PersonalCard from './sections/PersonalCard';
+import PersonalSkills from './sections/PersonalSkill';
 
 const App = () => {
+  const { theme } = useTheme(); 
+
   return (
-    <div>
+    <div className={theme === 'dark' ? 'bg-dark-gray-light' : 'bg-white'}>
       <Header />
       <div className="mt-8">
         <PersonalCard />

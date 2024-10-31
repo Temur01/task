@@ -1,6 +1,6 @@
 import { QRCodeSVG } from "qrcode.react";
 import { competencies } from "../data/data";
-import TopOfSection from "../shared/TopOfSection";
+import TopOfSection from "../components/TopOfSection";
 import CompetencyChart from "../components/charts/CompetencyChart";
 
 const CompetenciesSection = () => {

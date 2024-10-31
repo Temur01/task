@@ -11,7 +11,7 @@ import {
   LineElement,
   Title,
 } from "chart.js";
-import TopOfSection from "../shared/TopOfSection";
+import TopOfSection from "../components/TopOfSection";
 import { competenciesKnowledge } from "../data/data";
 import HalfCircleChart from "../components/charts/HalfCircleChart";
 

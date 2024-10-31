@@ -7,7 +7,7 @@ import {
   CategoryScale,
 } from "chart.js";
 import annotationPlugin from "chartjs-plugin-annotation";
-import brain from "../assets/Group.png";
+import brain from "../../assets/Group.png";
 
 ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, annotationPlugin);
 

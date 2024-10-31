@@ -7,11 +7,14 @@ import {
   LineElement,
   Filler,
 } from "chart.js";
-import TopOfSection from "../shared/TopOfSection";
+import TopOfSection from "../components/TopOfSection";
+import useTheme from "../hooks/useTheme";
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler);
 
 const PersonalSkills = () => {
+  const { theme } = useTheme();
+
   const radarData = {
     labels: ["Photoshop", "Illustrator", "XD", "Premiere", "InDesign"],
     datasets: [
@@ -44,15 +47,15 @@ const PersonalSkills = () => {
   const secondHalf = progressData.slice(Math.ceil(progressData.length / 2));
 
   return (
-    <div className="bg-white px-6 container">
+    <div className={`container px-6 ${theme === "dark" ? "bg-dark-gray-light text-dark-white-slate" : "bg-white text-gray-light"}`}>
       <TopOfSection title="Шахсий ва касбий хусусиятлар" />
       <div className="flex flex-col lg:flex-row lg:justify-between items-center lg:space-x-1">
         <div className="flex-1 space-y-4 w-full lg:mt-0">
           {firstHalf.map((item, index) => (
             <div key={index} className="my-4">
               <div className="flex justify-between mb-1">
-                <p className="text-gray-light">{item.label}</p>
-                <p className="text-gray-light font-semibold">{item.value}%</p>
+                <p className={`${theme === "dark" ? "text-dark-gray-text" : "text-gray-light"}`}>{item.label}</p>
+                <p className={`${theme === "dark" ? "text-dark-gray-text" : "text-gray-light"} font-semibold`}>{item.value}%</p>
               </div>
 
               <div className="w-full bg-slate-light rounded-full h-2">
@@ -78,11 +81,11 @@ const PersonalSkills = () => {
           {secondHalf.map((item, index) => (
             <div key={index} className="my-4">
               <div className="flex justify-between mb-1">
-                <p className="text-gray-light">{item.label}</p>
-                <p className="text-gray-light font-semibold">{item.value}%</p>
+                <p className={`${theme === "dark" ? "text-dark-gray-text" : "text-gray-light"}`}>{item.label}</p>
+                <p className={`${theme === "dark" ? "text-dark-gray-text" : "text-gray-light"} font-semibold`}>{item.value}%</p>
               </div>
 
-              <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className={`w-full bg-gray-200 rounded-full h-2`}>
                 <div
                   className="bg-blue-light h-2 rounded-full"
                   style={{ width: `${item.value}%` }}
